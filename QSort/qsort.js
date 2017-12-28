@@ -1,24 +1,33 @@
-function qsort(arr, start, end) {
-    var l = start;
-    //var r = arr.length - 1;
-    var r = end;
+function swap(arr, a, b) {
+    var temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+function partition(arr, start, end) {
     var pivot = arr[Math.floor(Math.random() * (end - start + 1)) + start];
-    // var pivot = 5;
-    do {
-        while ((arr[l] < pivot) && (l != r))
+    var l = start;
+    var r = end;
+    while (l <= r) {
+        while (arr[l] < pivot)
             l++;
-        while ((arr[r] > pivot) && (l != r))
+        while (arr[r] > pivot)
             r--;
-        if (l != r) {
-            var temp = arr[l];
-            arr[l] = arr[r];
-            arr[r] = temp;
+        if (l <= r) {
+            swap(arr, l, r);
             l++;
             r--;
         }
-    } while (l < r);
-    if ((end - start) > 1){
-        qsort(arr, start, l-1);
-        qsort(arr, l, end);
     }
+    return l;
+}
+function quickSort(items, left, right) {
+
+    index = partition(items, left, right);
+    if (left < index - 1) {
+        quickSort(items, left, index - 1);
+    }
+    if (index < right) {
+        quickSort(items, index, right);
+    }
+
 }
