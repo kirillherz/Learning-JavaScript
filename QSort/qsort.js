@@ -18,7 +18,7 @@ function qsort(arr, start, end) {
         }
     } while (l < r);
     if ((end - start) > 1){
-        qsort(arr, start, l);
-        qsort(arr, r, end);
+        qsort(arr, start, l-1);
+        qsort(arr, l, end);
     }
 }
