@@ -18,4 +18,14 @@ function Stack() {
            _size += 1;
        }
     };
+    this.pop = function(){
+        if(_size != 0){
+            var x = _head.data;
+            _head = _head.next;
+            _size -= 1;
+            return x;
+        }else{
+            return null;
+        }
+    }
 }
