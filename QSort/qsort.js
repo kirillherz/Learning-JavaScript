@@ -21,8 +21,7 @@ function partition(arr, start, end) {
     return l;
 }
 function quickSort(items, left, right) {
-
-    index = partition(items, left, right);
+    var index = partition(items, left, right);
     if (left < index - 1) {
         quickSort(items, left, index - 1);
     }
