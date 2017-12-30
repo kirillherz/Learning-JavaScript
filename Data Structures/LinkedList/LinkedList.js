@@ -16,15 +16,10 @@ function List() {
         return index;
     };
     this.push = function (x) {
-        if (_size == 0) {
-            _items.push([x, null]);
-            _head = 0;
-        } else {
-            var temp = _head; 
-            _head = _getEmptyCell();
-            _items[_head][NEXT] = temp;
-            _items[_head][DATA] = x;
-        }
+        var temp = _head;
+        _head = _getEmptyCell();
+        _items[_head][NEXT] = temp;
+        _items[_head][DATA] = x;
         _size += 1;
     };
     this.pop = function () {
