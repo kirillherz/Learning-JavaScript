@@ -26,8 +26,14 @@ function List() {
         }
     };
     this.pop = function () {
-        var x = _items[_head][0];
-        _head = _items[_head][1];
+        var x = _items[_head][DATA];
+        var tempHead = _head;
+        _head = _items[_head][NEXT];
+        if (tempHead == _items.length - 1) {
+            _items.pop();
+        }else{
+            _stack.push(tempHead);
+        }
         _size -= 1;
         return x;
     };
