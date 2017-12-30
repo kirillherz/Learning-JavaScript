@@ -20,11 +20,10 @@ function List() {
             _items.push([x, null]);
             _head = 0;
         } else {
-            var temp = _getEmptyCell();
+            var temp = _head; 
+            _head = _getEmptyCell();
             _items[_head][NEXT] = temp;
-            _head = temp;
             _items[_head][DATA] = x;
-            _items[_head][NEXT] = null;
         }
         _size += 1;
     };
@@ -44,7 +43,7 @@ function List() {
     };
     this.unshift = function (x) {
         var _temp = _head;
-        while (_items[_temp][NEXT] != null) {
+        while (_items[_temp][NEXT] !== null) {
             _temp = _items[_temp][NEXT];
         }
         var index = _getEmptyCell();
