@@ -3,7 +3,7 @@ function List() {
     var _items = [];
     var _stack = new Stack();
     var _head = null;
-    this.push= function (x) {
+    this.push = function (x) {
         if (_size == 0) {
             _items.push([x, null]);
             _size += 1;
@@ -22,5 +22,11 @@ function List() {
                 _size += 1;
             }
         }
-    }
+    };
+    this.pop = function () {
+        var x = _items[_head][0];
+        _head = _items[_head][1];
+        _size -= 1;
+        return x;
+    };
 }
