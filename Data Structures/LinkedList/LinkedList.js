@@ -3,6 +3,8 @@ function List() {
     var _items = [];
     var _stack = new Stack();
     var _head = null;
+    var DATA = 0;
+    var NEXT = 1;
     this.push = function (x) {
         if (_size == 0) {
             _items.push([x, null]);
@@ -15,10 +17,10 @@ function List() {
                 _size += 1;
             } else {
                 var temp = _stack.pop();
-                _items[_head][1] = temp;
+                _items[_head][NEXT] = temp;
                 _head = temp;
-                _items[_head][0] = x;
-                _items[_head][1] = null;
+                _items[_head][DATA] = x;
+                _items[_head][NEXT] = null;
                 _size += 1;
             }
         }
