@@ -15,6 +15,15 @@ function List() {
         }
         return index;
     };
+    var _deleteItem = function (index) {
+        if (index === _items.length - 1) {
+            _items.pop();
+        } else {
+            _items[index][DATA] = null;
+            _items[index][NEXT] = null;
+            _stack.push(index);
+        }
+    }
     this.push = function (x) {
         var temp = _head;
         _head = _getEmptyCell();
@@ -26,13 +35,7 @@ function List() {
         var x = _items[_head][DATA];
         var tempHead = _head;
         _head = _items[_head][NEXT];
-        if (tempHead == _items.length - 1) {
-            _items.pop();
-        } else {
-            _items[tempHead][null];
-            _items[tempHead][null];
-            _stack.push(tempHead);
-        }
+        _deleteItem(tempHead);s
         _size -= 1;
         return x;
     };
