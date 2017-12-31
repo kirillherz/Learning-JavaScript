@@ -35,7 +35,7 @@ function List() {
         var x = _items[_head][DATA];
         var tempHead = _head;
         _head = _items[_head][NEXT];
-        _deleteItem(tempHead);s
+        _deleteItem(tempHead);
         _size -= 1;
         return x;
     };
@@ -48,6 +48,7 @@ function List() {
         _items[index][DATA] = x;
         _items[index][NEXT] = null;
         _items[_temp][NEXT] = index;
+        _size += 1;
 
     };
 }
