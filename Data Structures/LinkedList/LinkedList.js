@@ -39,6 +39,25 @@ function List() {
         _size -= 1;
         return x;
     };
+    this.delete = function (index) {
+        var temp = _head;
+        var prev;
+        var i = 0;
+        var x;
+        if (index === _head) {
+            while (i !== index) {
+                prev = temp;
+                temp = _items[_head][NEXT];
+                i += 1;
+            }
+            _items[prev][NEXT] = _items[temp][NEXT];
+            x = _items[temp][DATA];
+            _deleteItem(temp);
+        } else {
+            x = this.pop();
+        }
+        _size -= 1;
+    }
     this.unshift = function (x) {
         var _temp = _head;
         while (_items[_temp][NEXT] !== null) {
