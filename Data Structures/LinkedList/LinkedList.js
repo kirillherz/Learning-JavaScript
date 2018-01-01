@@ -1,12 +1,15 @@
 function List() {
     var _size = 0;
     var _items = [];
-    var _stack = new Stack();
+    var _stack = null;
     var _head = null;
     var DATA = 0;
     var NEXT = 1;
     var _getEmptyCell = function () {
         var index;
+        if (_stack === null) {
+            _stack = new List();
+        }
         if (_stack.getSize() === 0) {
             _items.push([null, null]);
             index = _items.length - 1;
@@ -21,6 +24,9 @@ function List() {
         } else {
             _items[index][DATA] = null;
             _items[index][NEXT] = null;
+            if (_stack === null) {
+                _stack = new List();
+            }
             _stack.push(index);
         }
     };
