@@ -7,7 +7,7 @@ function List() {
     var NEXT = 1;
     var _getEmptyCell = function () {
         var index;
-        if (_stack.getSize() == 0) {
+        if (_stack.getSize() === 0) {
             _items.push([null, null]);
             index = _items.length - 1;
         } else {
@@ -24,7 +24,7 @@ function List() {
             _stack.push(index);
         }
     };
-    this.getSize = function(){
+    this.getSize = function () {
         return _size;
     };
     this.push = function (x) {
