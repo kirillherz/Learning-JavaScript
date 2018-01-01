@@ -42,13 +42,13 @@ function List() {
     this.delete = function (index) {
         var temp = _head;
         var prev;
-        var i = 0;
+        var i = _size - 1;
         var x;
         if (index !== _head) {
             while (i !== index) {
                 prev = temp;
                 temp = _items[temp][NEXT];
-                i += 1;
+                i -= 1;
             }
             _items[prev][NEXT] = _items[temp][NEXT];
             x = _items[temp][DATA];
