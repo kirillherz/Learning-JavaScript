@@ -23,7 +23,10 @@ function List() {
             _items[index][NEXT] = null;
             _stack.push(index);
         }
-    }
+    };
+    this.getSize = function(){
+        return _size;
+    };
     this.push = function (x) {
         var temp = _head;
         _head = _getEmptyCell();
