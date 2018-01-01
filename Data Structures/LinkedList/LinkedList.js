@@ -44,10 +44,10 @@ function List() {
         var prev;
         var i = 0;
         var x;
-        if (index === _head) {
+        if (index !== _head) {
             while (i !== index) {
                 prev = temp;
-                temp = _items[_head][NEXT];
+                temp = _items[temp][NEXT];
                 i += 1;
             }
             _items[prev][NEXT] = _items[temp][NEXT];
@@ -57,7 +57,8 @@ function List() {
             x = this.pop();
         }
         _size -= 1;
-    }
+        return x;
+    };
     this.unshift = function (x) {
         var _temp = _head;
         while (_items[_temp][NEXT] !== null) {
