@@ -7,14 +7,16 @@ function List() {
     var NEXT = 1;
     var _getEmptyCell = function () {
         var index;
-        if (_stack === null) {
-            _stack = new List();
-        }
-        if (_stack.getSize() === 0) {
+        if (_stack !== null) {
+            if (_stack.getSize() === 0) {
+                _items.push([null, null]);
+                index = _items.length - 1;
+            } else {
+                index = _stack.pop();
+            }
+        } else {
             _items.push([null, null]);
             index = _items.length - 1;
-        } else {
-            index = _stack.pop();
         }
         return index;
     };
