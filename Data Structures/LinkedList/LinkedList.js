@@ -43,11 +43,16 @@ function List() {
         _size += 1;
     };
     this.pop = function () {
-        var x = _items[_head][DATA];
-        var tempHead = _head;
-        _head = _items[_head][NEXT];
-        _deleteItem(tempHead);
-        _size -= 1;
+        var x;
+        if (_size > 0) {
+            x = _items[_head][DATA];
+            var tempHead = _head;
+            _head = _items[_head][NEXT];
+            _deleteItem(tempHead);
+            _size -= 1;
+        } else {
+            x = undefined;
+        }
         return x;
     };
     this.delete = function (index) {
@@ -60,6 +65,8 @@ function List() {
                 prev = temp;
                 temp = _items[temp][NEXT];
                 i -= 1;
+                if (i < 0)
+                    return undefined;
             }
             _items[prev][NEXT] = _items[temp][NEXT];
             x = _items[temp][DATA];
