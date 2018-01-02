@@ -55,6 +55,31 @@ function List() {
         }
         return x;
     };
+    this.insert = function (index, x) {
+        var temp = _head;
+        var prev;
+        var i = _size - 1;
+        if ((index === _size) && (index !== 0)) {
+            this.unshift(x);
+            return;
+        }
+        if ((_head !== null) && (index !== _head)) {
+            while (i !== index) {
+                prev = temp;
+                temp = _items[temp][NEXT];
+                i -= 1;
+                if (i < 0)
+                    return undefined;
+            }
+            var cell = _getEmptyCell();
+            _items[cell][DATA] = x;
+            _items[cell][NEXT] = temp;
+            _items[prev][NEXT] = cell;
+            _size += 1;
+        } else {
+            this.push(x);
+        }
+    };
     this.delete = function (index) {
         var temp = _head;
         var prev;
