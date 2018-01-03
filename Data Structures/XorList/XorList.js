@@ -17,4 +17,20 @@ function XorList() {
         }
         return index;
     };
+    this.push = function (x) {
+        var index = _getEmptyCell();
+        if (_size === 0) {
+            _items[index][DATA] = x;
+            _items[index][NEXT] = NULL^NULL;
+            _head = index;
+            _tail = index;
+        } else {
+            var prev = _items[_tail][NEXT] ^ NULL;
+            _items[_tail][NEXT] = prev ^ index;
+            _items[index][NEXT] = _tail ^ NULL;
+            _items[index][DATA] = x;
+            _tail = index;
+        }
+        _size += 1;
+    };
 }
