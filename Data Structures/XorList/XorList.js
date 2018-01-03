@@ -7,7 +7,7 @@ function XorList(){
     var DATA = 0;
     var NEXT = 1;
     var _stack = [];
-    this._getEmptyCell = function(){
+    var _getEmptyCell = function(){
         var index;
         if(_stack.length === 0){
             _items.push([null,null]);
