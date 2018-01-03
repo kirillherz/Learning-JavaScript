@@ -27,20 +27,18 @@ function XorList() {
 
     }
     this.push = function (x) {
-        var index = _getEmptyCell();
         if (_size === 0) {
-            _items[index][DATA] = x;
-            _items[index][ADRESS] = NULL ^ NULL;
-            _head = index;
-            _tail = index;
+            _FirstAddition();
         } else {
+            var index = _getEmptyCell();
             var prev = _items[_tail][ADRESS] ^ NULL;
             _items[_tail][ADRESS] = prev ^ index;
             _items[index][ADRESS] = _tail ^ NULL;
             _items[index][DATA] = x;
             _tail = index;
+            _size += 1;
         }
-        _size += 1;
+
     };
     this.unshift = function (x) {
         var index = _getEmptyCell();
