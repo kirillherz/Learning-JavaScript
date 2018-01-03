@@ -17,6 +17,15 @@ function XorList() {
         }
         return index;
     };
+    var _FirstAddition = function (x) {
+        var index = _getEmptyCell();
+        _items[index][DATA] = x;
+        _items[index][ADRESS] = NULL ^ NULL;
+        _head = index;
+        _tail = index;
+        _size += 1;
+
+    }
     this.push = function (x) {
         var index = _getEmptyCell();
         if (_size === 0) {
