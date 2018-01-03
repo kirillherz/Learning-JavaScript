@@ -5,7 +5,7 @@ function XorList() {
     var _tail = null;
     var NULL = -1;
     var DATA = 0;
-    var NEXT = 1;
+    var ADRESS = 1;
     var _stack = [];
     var _getEmptyCell = function () {
         var index;
