@@ -28,7 +28,7 @@ function XorList() {
     }
     this.push = function (x) {
         if (_size === 0) {
-            _firstAddition();
+            _firstAddition(x);
         } else {
             var index = _getEmptyCell();
             var prev = _items[_tail][ADRESS] ^ NULL;
