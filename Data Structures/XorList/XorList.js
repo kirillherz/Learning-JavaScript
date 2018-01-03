@@ -52,5 +52,21 @@ function XorList() {
             _head = index;
             _size + 1;
         }
-    }
+    };
+    this.pop = function () {
+        if (_size === 1) {
+            var x = _items[_tail][DATA];
+            _stack.push(_tail);
+        } else {
+            var x = _items[_tail][DATA];
+            var prev = _items[_tail][ADRESS] ^ NULL;
+            var prevPrev = _tail ^ _items[prev][ADRESS];
+            _stack.push(_tail);
+            _tail = prev;
+            _items[_tail][ADRESS] = prevPrev ^ NULL;
+
+        }
+        _size -= 1;
+        return x;
+    };
 }
