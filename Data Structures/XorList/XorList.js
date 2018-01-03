@@ -17,7 +17,7 @@ function XorList() {
         }
         return index;
     };
-    var _FirstAddition = function (x) {
+    var _firstAddition = function (x) {
         var index = _getEmptyCell();
         _items[index][DATA] = x;
         _items[index][ADRESS] = NULL ^ NULL;
@@ -28,7 +28,7 @@ function XorList() {
     }
     this.push = function (x) {
         if (_size === 0) {
-            _FirstAddition();
+            _firstAddition();
         } else {
             var index = _getEmptyCell();
             var prev = _items[_tail][ADRESS] ^ NULL;
@@ -41,9 +41,8 @@ function XorList() {
 
     };
     this.unshift = function (x) {
-        
         if (_size === 0) {
-            _FirstAddition();
+            _firstAddition();
         } else {
             var index = _getEmptyCell();
             var next = _items[_head][ADRESS] ^ NULL;
@@ -51,8 +50,7 @@ function XorList() {
             _items[index][ADRESS] = _head ^ NULL;
             _items[index][DATA] = x;
             _head = index;
-             _size + 1;
+            _size + 1;
         }
-       
     }
 }
