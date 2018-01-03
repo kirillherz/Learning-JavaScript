@@ -41,19 +41,18 @@ function XorList() {
 
     };
     this.unshift = function (x) {
-        var index = _getEmptyCell();
+        
         if (_size === 0) {
-            _items[index][DATA] = x;
-            _items[index][ADRESS] = NULL ^ NULL;
-            _head = index;
-            _tail = index;
+            _FirstAddition();
         } else {
+            var index = _getEmptyCell();
             var next = _items[_head][ADRESS] ^ NULL;
             _items[_head][ADRESS] = next ^ index;
             _items[index][ADRESS] = _head ^ NULL;
             _items[index][DATA] = x;
             _head = index;
+             _size + 1;
         }
-        _size + 1;
+       
     }
 }
