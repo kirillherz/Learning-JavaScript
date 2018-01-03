@@ -42,7 +42,7 @@ function XorList() {
     };
     this.unshift = function (x) {
         if (_size === 0) {
-            _firstAddition();
+            _firstAddition(x);
         } else {
             var index = _getEmptyCell();
             var next = _items[_head][ADRESS] ^ NULL;
