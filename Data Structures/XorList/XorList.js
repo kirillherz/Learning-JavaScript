@@ -21,13 +21,13 @@ function XorList() {
         var index = _getEmptyCell();
         if (_size === 0) {
             _items[index][DATA] = x;
-            _items[index][NEXT] = NULL^NULL;
+            _items[index][ADRESS] = NULL ^ NULL;
             _head = index;
             _tail = index;
         } else {
-            var prev = _items[_tail][NEXT] ^ NULL;
-            _items[_tail][NEXT] = prev ^ index;
-            _items[index][NEXT] = _tail ^ NULL;
+            var prev = _items[_tail][ADRESS] ^ NULL;
+            _items[_tail][ADRESS] = prev ^ index;
+            _items[index][ADRESS] = _tail ^ NULL;
             _items[index][DATA] = x;
             _tail = index;
         }
@@ -37,16 +37,16 @@ function XorList() {
         var index = _getEmptyCell();
         if (_size === 0) {
             _items[index][DATA] = x;
-            _items[index][NEXT] = NULL ^ NULL;
+            _items[index][ADRESS] = NULL ^ NULL;
             _head = index;
             _tail = index;
-        }else{
-            var next = _items[_head][NEXT] ^ NULL;
-            _items[_head][NEXT] = next ^ index;
-            _items[index][NEXT] = _head ^ NULL;
+        } else {
+            var next = _items[_head][ADRESS] ^ NULL;
+            _items[_head][ADRESS] = next ^ index;
+            _items[index][ADRESS] = _head ^ NULL;
             _items[index][DATA] = x;
             _head = index;
         }
-        _size +1;
+        _size + 1;
     }
 }
