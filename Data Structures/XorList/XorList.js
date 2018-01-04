@@ -17,6 +17,9 @@ function XorList() {
         }
         return index;
     };
+    this.getSize = function () {
+        return _size;
+    };
     var _firstAddition = function (x) {
         var index = _getEmptyCell();
         _items[index][DATA] = x;
@@ -25,7 +28,7 @@ function XorList() {
         _tail = index;
         _size += 1;
 
-    }
+    };
     this.push = function (x) {
         if (_size === 0) {
             _firstAddition(x);
