@@ -69,4 +69,20 @@ function XorList() {
         _size -= 1;
         return x;
     };
+    this.shift = function () {
+        if (_size === 1) {
+            var x = _items[_head][DATA];
+            _stack.push(_head);
+        } else {
+            var x = _items[_head][DATA];
+            var next = _items[_head][ADRESS] ^ NULL;
+            var nextNext = _head ^ _items[next][ADRESS];
+            _stack.push(_head);
+            _head = next;
+            _items[_head][ADRESS] = nextNext ^ NULL;
+
+        }
+        _size -= 1;
+        return x;
+    };
 }
