@@ -37,6 +37,72 @@
                 });
 
             });
+            describe("pop", function () {
+                it("Учитывает размер при использован функции push", function () {
+                    var l = new XorList();
+                    l.push(0);
+                    l.push(1);
+                    l.push(2);
+                    l.pop();
+                    assert.equal(l.getSize(), 2);
+                    l.pop();
+                    assert.equal(l.getSize(), 1);
+                    l.pop();
+                    assert.equal(l.getSize(), 0);
+                });
+                it("Учитывает размер при использован функции unshift", function () {
+                    var l = new XorList();
+                    l.unshift(2);
+                    l.unshift(1);
+                    l.unshift(0);
+                    l.pop();
+                    assert.equal(l.getSize(), 2);
+                    l.pop();
+                    assert.equal(l.getSize(), 1);
+                    l.pop();
+                    assert.equal(l.getSize(), 0);
+                });
+                it("Учитывает размер при использован функции insert", function () {
+                    var l = new XorList();
+                    l.insert(0, 0);
+                    l.insert(1, 1);
+                    l.insert(2, 2);
+                    l.pop()
+                    assert.equal(l.getSize(), 2);
+                    l.pop();
+                    assert.equal(l.getSize(), 1);
+                    l.pop();
+                    assert.equal(l.getSize(), 0);
+                });
+
+                it("Возвращает последний элемент, который был положен функией push", function () {
+                    var l = new XorList();
+                    l.push(0);
+                    l.push(1);
+                    l.push(2);
+                    assert.equal(l.pop(), 2);
+                    assert.equal(l.pop(), 1);
+                    assert.equal(l.pop(), 0);
+                });
+                it("Возвращает последний элемент, который был положен функией unshift", function () {
+                    var l = new XorList();
+                    l.unshift(2);
+                    l.unshift(1);
+                    l.unshift(0);
+                    assert.equal(l.pop(), 2);
+                    assert.equal(l.pop(), 1);
+                    assert.equal(l.pop(), 0);
+                });
+                it("Возвращает последний элемент, который был положен функией insert", function () {
+                    var l = new XorList();
+                    l.insert(0, 0);
+                    l.insert(1, 1);
+                    l.insert(2, 2);
+                    assert.equal(l.pop(), 2);
+                    assert.equal(l.pop(), 1);
+                    assert.equal(l.pop(), 0);
+                });
+            });
         <!-- в элементе с id="mocha" будут результаты тестов -->
         <div id="mocha"></div>
 
