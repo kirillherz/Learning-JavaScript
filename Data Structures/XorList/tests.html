@@ -103,6 +103,18 @@
                     assert.equal(l.pop(), 0);
                 });
             });
+            describe("unshift", function () {
+
+                it("Считает размер списка", function () {
+                    var l = new XorList();
+                    l.unshift(2);
+                    l.unshift(1);
+                    l.unshift(0);
+                    assert.equal(l.getSize(), 3);
+                   
+                });
+
+            });
         <!-- в элементе с id="mocha" будут результаты тестов -->
         <div id="mocha"></div>
 
