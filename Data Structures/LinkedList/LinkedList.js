@@ -59,7 +59,7 @@ function List() {
         var temp = _head;
         var prev;
         var i = _size - 1;
-        var isStart = (_size !== 0) && (index === 0);
+        var isStart = index === 0;
         var isMiddle = (_head !== null) && (index !== _head);
         if (isStart) {
             this.unshift(x);
