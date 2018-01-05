@@ -72,6 +72,30 @@ function XorList() {
         _size -= 1;
         return x;
     };
+    this.insert = function (index, x) {
+        if (index === 0) {
+            this.unshift(x);
+        } else if (index === _items.length - 1) {
+            this.push(x);
+        } else {
+            var p = _head;
+            var prev = NULL;
+            var temp;
+            for (var c = 0; c !== index; c++) {
+                temp = p;
+                p = _items[p][ADRESS] ^ prev;
+                prev = temp;
+            }
+            var prevPrev = _items[prev][ADRESS] ^ p;
+            var next = _items[p][ADRESS] ^ prev;
+            var newItemIndex = _getEmptyCell();
+            _items[prev][ADRESS] = prevPrev ^ newItemIndex;
+            _items[newItemIndex][ADRESS] = prev ^p;
+            _items[newItemIndex][DATA] = x;
+            _items[p][ADRESS] = newItemIndex ^ next;
+            _size += 1;
+        }
+    };
     this.shift = function () {
         if (_size === 1) {
             var x = _items[_head][DATA];
