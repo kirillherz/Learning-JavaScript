@@ -25,7 +25,7 @@
     <body>
 
         <script>
-            
+
             describe("push", function () {
 
                 it("Считает размер списка", function () {
@@ -111,10 +111,23 @@
                     l.unshift(1);
                     l.unshift(0);
                     assert.equal(l.getSize(), 3);
-                   
+
                 });
 
             });
+            describe("insert", function () {
+
+                it("Считает размер списка", function () {
+                    var l = new XorList();
+                    l.insert(0, 0);
+                    l.insert(1, 1);
+                    l.insert(2, 2);
+                    assert.equal(l.getSize(), 3);
+
+                });
+
+            });
+        </script>
         <!-- в элементе с id="mocha" будут результаты тестов -->
         <div id="mocha"></div>
 
