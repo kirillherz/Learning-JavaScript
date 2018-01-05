@@ -27,7 +27,6 @@ function XorList() {
         _head = index;
         _tail = index;
         _size += 1;
-
     };
     this.push = function (x) {
         if (_size === 0) {
@@ -41,7 +40,6 @@ function XorList() {
             _tail = index;
             _size += 1;
         }
-
     };
     this.unshift = function (x) {
         if (_size === 0) {
@@ -90,7 +88,7 @@ function XorList() {
             var next = _items[p][ADRESS] ^ prev;
             var newItemIndex = _getEmptyCell();
             _items[prev][ADRESS] = prevPrev ^ newItemIndex;
-            _items[newItemIndex][ADRESS] = prev ^p;
+            _items[newItemIndex][ADRESS] = prev ^ p;
             _items[newItemIndex][DATA] = x;
             _items[p][ADRESS] = newItemIndex ^ next;
             _size += 1;
@@ -107,7 +105,6 @@ function XorList() {
             _stack.push(_head);
             _head = next;
             _items[_head][ADRESS] = nextNext ^ NULL;
-
         }
         _size -= 1;
         return x;
