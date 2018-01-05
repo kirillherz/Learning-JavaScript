@@ -109,4 +109,29 @@ function XorList() {
         _size -= 1;
         return x;
     };
+    this[Symbol.iterator] = function () {
+        var p = _head;
+        var prev = NULL;
+        var temp;
+        var i = 0;
+        return {
+            next: function () {
+                if (i < _size) {
+                    var x = _items[p][DATA];
+                    temp = p;
+                    p = prev ^ _items[p][ADRESS];
+                    prev = temp;
+                    i++;
+                    return {
+                        done: false,
+                        value: x
+                    };
+                } else {
+                    return{
+                        done: true
+                    };
+                }
+            }
+        };
+    };
 }
