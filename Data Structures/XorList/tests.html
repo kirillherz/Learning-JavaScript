@@ -25,6 +25,18 @@
     <body>
 
         <script>
+            
+            describe("push", function () {
+
+                it("Считает размер списка", function () {
+                    var l = new XorList();
+                    l.push(0);
+                    l.push(1);
+                    l.push(2);
+                    assert.equal(l.getSize(), 3);
+                });
+
+            });
         <!-- в элементе с id="mocha" будут результаты тестов -->
         <div id="mocha"></div>
 
