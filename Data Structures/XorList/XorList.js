@@ -73,7 +73,7 @@ function XorList() {
     this.insert = function (index, x) {
         if (index === 0) {
             this.unshift(x);
-        } else if (index === _items.length - 1) {
+        } else if (index === _items.length) {
             this.push(x);
         } else {
             var p = _head;
