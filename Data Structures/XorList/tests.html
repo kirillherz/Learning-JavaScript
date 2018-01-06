@@ -152,7 +152,23 @@
                     assert.equal(l.getSize(), 3);
 
                 });
+                it("Правильно считает адреса", function () {
+                    var l = new XorList();
 
+                    l.unshift(4);
+                    l.unshift(3);
+                    l.unshift(2);
+                    l.unshift(1);
+                    l.unshift(0);
+                    var iterator = l.getAdressIterator();  
+                    assert.equal(iterator.next().value, -4);
+                    assert.equal(iterator.next().value, 6);
+                    assert.equal(iterator.next().value, 2);
+                    assert.equal(iterator.next().value, 2);
+                    assert.equal(iterator.next().value, -2);
+                  
+
+                });
             });
             describe("insert", function () {
 
