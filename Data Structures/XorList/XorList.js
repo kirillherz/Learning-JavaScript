@@ -109,6 +109,34 @@ function XorList() {
         _size -= 1;
         return x;
     };
+    this.getAdressIterator = function () {
+        var p = _head;
+        var prev = NULL;
+        var temp;
+        var i = 0;
+        return {
+            [Symbol.iterator] () {
+                return this;
+            },
+            next: function () {
+                if (i < _size) {
+                    var x = _items[p][ADRESS];
+                    temp = p;
+                    p = prev ^ _items[p][ADRESS];
+                    prev = temp;
+                    i++;
+                    return {
+                        done: false,
+                        value: x
+                    };
+                } else {
+                    return{
+                        done: true
+                    };
+                }
+            }
+        };
+    };
     this[Symbol.iterator] = function () {
         var p = _head;
         var prev = NULL;
