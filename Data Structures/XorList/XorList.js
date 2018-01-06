@@ -51,7 +51,7 @@ function XorList() {
             _items[index][ADRESS] = _head ^ NULL;
             _items[index][DATA] = x;
             _head = index;
-            _size + 1;
+            _size += 1;
         }
     };
     this.pop = function () {
