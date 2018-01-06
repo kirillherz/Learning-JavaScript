@@ -1,4 +1,4 @@
-describe("insert", function () {s
+describe("insert", function () {
     it("Считает размер списка", function () {
         var l = new XorList();
         l.insert(0, 0);
