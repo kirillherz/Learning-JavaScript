@@ -1,0 +1,74 @@
+describe("pop", function () {
+    it("Считает размер списка", function () {
+        var l = new XorList();
+        l.push(0);
+        l.push(1);
+        l.push(2);
+        l.push(3);
+        l.push(4);
+        l.pop();
+        assert.equal(l.getSize(), 4);
+        l.pop();
+        assert.equal(l.getSize(), 3);
+        l.pop();
+        assert.equal(l.getSize(), 2);
+        l.pop();
+        assert.equal(l.getSize(), 1);
+        l.pop();
+        assert.equal(l.getSize(), 0);
+
+
+    });
+    it("Правильно считает адреса", function () {
+        var l = new XorList();
+        l.push(0);
+        l.push(1);
+        l.push(2);
+        l.push(3);
+        l.push(4);
+        l.pop();
+        var iterator = l.getAdressIterator();
+        assert.equal(iterator.next().value, -2);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, -3);
+        l.pop();
+        iterator = l.getAdressIterator();
+        assert.equal(iterator.next().value, -2);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, -2);
+        l.pop();
+        iterator = l.getAdressIterator();
+        assert.equal(iterator.next().value, -2);
+        assert.equal(iterator.next().value, -1);
+        l.pop();
+        iterator = l.getAdressIterator();
+        assert.equal(iterator.next().value, 0);
+    });
+    it("Правильно удаляет элементы", function () {
+        var l = new XorList();
+        l.push(0);
+        l.push(1);
+        l.push(2);
+        l.push(3);
+        l.push(4);
+        l.pop();
+        var iterator = l[Symbol.iterator]();
+        assert.equal(iterator.next().value, 0);
+        assert.equal(iterator.next().value, 1);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, 3);
+        l.pop();
+        iterator = l[Symbol.iterator]();
+        assert.equal(iterator.next().value, 0);
+        assert.equal(iterator.next().value, 1);
+        assert.equal(iterator.next().value, 2);
+        l.pop();
+        iterator = l[Symbol.iterator]();
+        assert.equal(iterator.next().value, 0);
+        assert.equal(iterator.next().value, 1);
+        l.pop();
+        iterator = l[Symbol.iterator]();
+        assert.equal(iterator.next().value, 0);
+    });
+});
