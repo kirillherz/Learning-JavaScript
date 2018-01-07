@@ -32,3 +32,15 @@ function PizzaBuilder() {
     };
 }
 
+function HawaiianPizzaBuilder() {
+    PizzaBuilder.call(this);
+    this.buildDough = function () {
+        this._pizza.setDough("cross");
+    };
+    this.buildSauce = function () {
+        this._pizza.setSauce("hot");
+    };
+    this.buildTopping = function () {
+        this._pizza.setTopping("pepperoni+salami");
+    };
+}
