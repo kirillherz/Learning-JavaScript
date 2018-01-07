@@ -78,7 +78,6 @@ function _getEmptyCell() {
 }
 
 function _deleteItem(index) {
-    console.log(this);
     if (index === this._data.length - 1) {
         this._data.pop();
         this._nextAdress.pop();
