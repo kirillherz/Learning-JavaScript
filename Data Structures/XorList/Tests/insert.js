@@ -4,7 +4,10 @@ describe("insert", function () {
         l.insert(0, 0);
         l.insert(1, 1);
         l.insert(2, 2);
-        assert.equal(l.getSize(), 3);
+        l.insert(3, 3);
+        l.insert(4, 4);
+        l.insert(2, 2);
+        assert.equal(l.getSize(), 6);
     });
     it("Правильно считает адреса", function () {
         var l = new XorList();
@@ -21,5 +24,21 @@ describe("insert", function () {
         assert.equal(iterator.next().value, 6);
         assert.equal(iterator.next().value, 6);
         assert.equal(iterator.next().value, -4);
+    });
+    it("Правильно сохраняет элементы", function () {
+        var l = new XorList();
+        l.insert(0, 0);
+        l.insert(1, 1);
+        l.insert(2, 2);
+        l.insert(3, 3);
+        l.insert(4, 4);
+        l.insert(2, 2);
+        var iterator = l[Symbol.iterator]();
+        assert.equal(iterator.next().value, 0);
+        assert.equal(iterator.next().value, 1);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, 2);
+        assert.equal(iterator.next().value, 3);
+        assert.equal(iterator.next().value, 4);
     });
 });
