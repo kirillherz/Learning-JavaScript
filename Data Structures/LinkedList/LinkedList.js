@@ -6,7 +6,6 @@ function List() {
     this._head = null;
     this._tail = null;
     this._headStack = null;
-    this._tailStack = null;
     //Алгоритмы
     this._getEmptyCellFunction;
     this._deleteItemFunction;
