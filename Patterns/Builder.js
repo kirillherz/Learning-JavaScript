@@ -22,3 +22,13 @@ function Pizza() {
     };
 }
 
+function PizzaBuilder() {
+    this._pizza;
+    this.getPizza = function () {
+        return this._pizza;
+    };
+    this.createNewPizzaProduct = function () {
+        this._pizza = new Pizza();
+    };
+}
+
