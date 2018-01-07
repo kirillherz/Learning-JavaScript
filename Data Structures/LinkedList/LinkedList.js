@@ -1,6 +1,5 @@
 function List() {
     this._size = 0;
-    this._SizeStack = 0;
     this._data = [];
     this._nextAdress = [];
     this._head = null;
