@@ -6,7 +6,7 @@ describe('_deleteItem', function () {
                 this._headStack = null;
                 _deleteItem.call(this, 2);
                 assert.equal(this._headStack, 2);
-                assert.equal(this._nextAdress[_headStack], null);
+                assert.equal(this._nextAdress[this._headStack], null);
                 _deleteItem.call(this, 0);
                 assert.equal(this._headStack, 0);
                 assert.equal(this._nextAdress[this._headStack], 2);
