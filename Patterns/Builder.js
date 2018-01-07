@@ -44,3 +44,18 @@ function HawaiianPizzaBuilder() {
         this._pizza.setTopping("pepperoni+salami");
     };
 }
+function Waiter() {
+    var _pizzaBuilder;
+    this.setPizzaBuilder = function (pb) {
+        _pizzaBuilder = pb;
+    };
+    this.getPizza = function () {
+        return _pizzaBuilder.getPizza();
+    };
+    this.constructPizza = function () {
+        _pizzaBuilder.createNewPizzaProduct();
+        _pizzaBuilder.buildDough();
+        _pizzaBuilder.buildSauce();
+        _pizzaBuilder.buildTopping();
+    };
+}
