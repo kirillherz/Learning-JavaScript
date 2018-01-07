@@ -20,6 +20,6 @@ describe("push", function () {
         assert.equal(this._head, 0);
         assert.equal(this._tail, 1);
         assert.equal(this._data[this._tail], 1);
-        assert.equal(this._nextAdress[this._tails], null);
+        assert.equal(this._nextAdress[this._tail], null);
     });
 });
