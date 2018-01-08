@@ -7,7 +7,7 @@ function List() {
     this._insertFunction;
     this._deleteItemFunction;
     this._unshiftFunction;
-    
+
     this.getSize = function () {
         return this._size;
     };
@@ -60,7 +60,7 @@ function ListBasedArray() {
     //Алгоритмы
     this._getEmptyCellFunction;
     this._deleteItemFunction;
-    
+
     this._getEmptyCell = function () {
         this._getEmptyCellFunction();
     };
