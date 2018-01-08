@@ -1,25 +1,13 @@
 function List() {
     this._size = 0;
-    this._data = [];
-    this._nextAdress = [];
-    this._head = null;
-    this._tail = null;
-    this._headStack = null;
+
     //Алгоритмы
-    this._getEmptyCellFunction;
-    this._deleteItemFunction;
     this._pushFunction;
     this._popFunction;
     this._insertFunction;
     this._deleteItemFunction;
     this._unshiftFunction;
-
-    this._getEmptyCell = function () {
-        this._getEmptyCellFunction();
-    };
-    this._deleteItem = function (index) {
-        this._deleteItemFunction(index);
-    };
+    
     this.getSize = function () {
         return this._size;
     };
