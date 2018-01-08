@@ -3,8 +3,14 @@
         <title>Решение квадратного уравнения</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
         <script>
-            function click() {
+
+            var cl = function () {
+       
                 var a = Number(document.getElementById("a"));
                 var b = Number(document.getElementById("b"));
                 var c = Number(document.getElementById("c"));
@@ -16,13 +22,12 @@
                 var l2 = document.getElementById("x2");
                 l2.innerHTML = x2;
             }
+            ;
         </script>
-    </head>
-    <body>
         <input type="text" id="a" value="" />
         <input type="text" id="b" value="" />
         <input type="text" id="c" value="" />
-        <input type="submit" value="Найти корни" onclick="click();"/>
+        <input type="button" onclick="cl()" value="Считать!"/>
         <label id="x1"></label>
         <label id="x2"></label>
     </body>
