@@ -50,6 +50,25 @@ function List() {
     };
 }
 
+function ListBasedArray() {
+    List.call(this);
+    this._data = [];
+    this._nextAdress = [];
+    this._head = null;
+    this._tail = null;
+    this._headStack = null;
+    //Алгоритмы
+    this._getEmptyCellFunction;
+    this._deleteItemFunction;
+    
+    this._getEmptyCell = function () {
+        this._getEmptyCellFunction();
+    };
+    this._deleteItem = function (index) {
+        this._deleteItemFunction(index);
+    };
+}
+
 function _getEmptyCell() {
     var index;
     if (this._headStack === null) {
