@@ -3,13 +3,27 @@
         <title>Решение квадратного уравнения</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function click() {
+                var a = Number(document.getElementById("a"));
+                var b = Number(document.getElementById("b"));
+                var c = Number(document.getElementById("c"));
+                var d = b * b - 4 * a * c;
+                var x1 = (-b - Math.sqrt(d)) / (2 * a);
+                var x2 = (-b + Math.sqrt(d)) / (2 * a);
+                var l1 = document.getElementById("x1");
+                l1.innerHTML = x1;
+                var l2 = document.getElementById("x2");
+                l2.innerHTML = x2;
+            }
+        </script>
     </head>
     <body>
-        <input type="text" name="a" value="" />
-        <input type="text" name="b" value="" />
-        <input type="text" name="c" value="" />
-        <input type="submit" value="Найти корни" />
-        <label id="x"></label>
-        <label id="y"></label>
+        <input type="text" id="a" value="" />
+        <input type="text" id="b" value="" />
+        <input type="text" id="c" value="" />
+        <input type="submit" value="Найти корни" onclick="click();"/>
+        <label id="x1"></label>
+        <label id="x2"></label>
     </body>
 </html>
