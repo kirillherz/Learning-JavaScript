@@ -6,7 +6,7 @@ function Stack() {
         this.next = null;
     }
     this.push = function (data) {
-        if (_size == 0) {
+        if (_size === 0) {
             _head = new _Node();
             _head.data = data;
             _size += 1;
@@ -19,7 +19,7 @@ function Stack() {
         }
     };
     this.pop = function () {
-        if (_size != 0) {
+        if (_size !== 0) {
             var x = _head.data;
             _head = _head.next;
             _size -= 1;
@@ -27,8 +27,8 @@ function Stack() {
         } else {
             return null;
         }
-    }
+    };
     this.getSize = function(){
         return _size;
-    }
+    };
 }
