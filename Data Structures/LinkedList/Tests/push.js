@@ -1,4 +1,10 @@
 describe("push", function () {
+    var listBuilder = new ListBasedArrayBuilder();
+    var list = listBuilder
+            .createNewList()
+            .buildGetEmptyCellFunction()
+            .buildPushFunction()
+            .getList();
     it("Добавляет элемент в пустой список", function () {
         List.call(this);
         this._getEmptyCell = _getEmptyCell;
