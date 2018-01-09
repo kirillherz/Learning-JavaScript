@@ -62,7 +62,7 @@ function ListBasedArray() {
     this._deleteItemFunction;
 
     this._getEmptyCell = function () {
-        this._getEmptyCellFunction();
+        return this._getEmptyCellFunction();
     };
     this._deleteItem = function (index) {
         this._deleteItemFunction(index);
@@ -114,4 +114,8 @@ function push(x) {
         this._data[index] = x;
     }
     this._size += 1;
+}
+
+function pop(){
+    
 }
