@@ -69,7 +69,6 @@ function ListBasedArray() {
     };
     this[Symbol.iterator] = function () {
         var p = this._head;
-        var size = this._size;
         var self = this;
         var i = 0;
         var x;
