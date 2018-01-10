@@ -39,6 +39,23 @@ describe("push", function () {
         assert.equal(list._nextAdress[list._tail], null);
     });
     it("Считает размер списка", function () {
-        assert.equal(list.getSize(), 2);
+        var list = {_data: [],
+            _nextAdress: [],
+            _head: null,
+            _tail: null,
+
+            _size: 0,
+            _countCallGetEmptyCell: 0,
+            _getEmptyCell: function () {
+                this._data.push(null);
+                this._nextAdress.push(null);
+                this._countCallGetEmptyCell += 1;
+                return this._countCallGetEmptyCell - 1;
+            },
+            push: push};
+        list.push(0);
+        list.push(1);
+        list.push(2);
+        assert.equal(list._size, 3);
     });
 });
