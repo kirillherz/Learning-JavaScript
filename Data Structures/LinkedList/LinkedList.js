@@ -138,7 +138,11 @@ function push(x) {
     }
     this._size += 1;
 }
-
+var data = [0,1,2,3,4];
 function pop() {
-
+    var x;
+    x = data.pop();
+    this._size -= 1;
+    return x;
+    
 }
