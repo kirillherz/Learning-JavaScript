@@ -21,6 +21,17 @@ describe("push", function () {
     });
     it("Добавляет элемент в непустой список", function () {
         console.log(list);
+        var list = {_data: [0],
+            _nextAdress: [null],
+            _head: 0,
+            _tail: 0,
+            _size: 1,
+            _getEmptyCell: function () {
+                this._data.push(null);
+                this._nextAdress.push(null);
+                return 1;
+            },
+            push: push};
         list.push(1);
         assert.equal(list._head, 0);
         assert.equal(list._tail, 1);
