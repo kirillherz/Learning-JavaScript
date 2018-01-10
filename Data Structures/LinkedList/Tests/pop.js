@@ -9,11 +9,13 @@ describe("pop", function () {
             pop: pop};
         var index = 4;
         while (list._size > 0) {
-            assert.equal(list.pop(),index );
+            assert.equal(list.pop(), index, "Возвращаемый элемент не соответствует ожидаемому");
             index -= 1;
         }
-        assert.equal(list._head,null );
-        assert.equal(list._tail,null );
+        assert.equal(list._head, "При пустом списке указатель head не равен null");
+        assert.equal(list._tail, "При пустом списке указатель tail не равен null");
+
+    });
     });
 }
 );
