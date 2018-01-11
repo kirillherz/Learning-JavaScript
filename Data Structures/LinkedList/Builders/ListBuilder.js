@@ -8,6 +8,24 @@ function ListBuilder() {
     };
 }
 
+function DirectorList() {
+    var _listBuilder;
+    this.setBuilder = function (builder) {
+        _listBuilder = builder;
+    };
+    this.getList = function () {
+        return _listBuilder.getList();
+    };
+    this.counstructList = function () {
+        _listBuilder
+                .createNewList()
+                .buildGetEmptyCellFunction()
+                .buildDeleteItemFuinction()
+                .buildPushFunction()
+                .buildPopFunction();
+    };
+}
+
 function ListBasedArrayBuilder() {
     ListBuilder.call(this);
     var ParentCreateNewList = this.createNewList;
