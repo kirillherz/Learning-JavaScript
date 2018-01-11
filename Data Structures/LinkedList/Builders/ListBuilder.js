@@ -39,8 +39,18 @@ function ListBasedArrayBuilder() {
         this._list.setGetEmptyCell(_getEmptyCell);
         return this;
     };
+    this.buildDeleteItemFuinction = function () {
+        this._list.setDeleteItem(_deleteItem);
+        return this;
+    };
+
     this.buildPushFunction = function () {
         this._list.setPush(push);
         return this;
     };
+
+    this.buildPopFunction = function () {
+        this._list.setPop(pop);
+        return this;
+    }
 }
