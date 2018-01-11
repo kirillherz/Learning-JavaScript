@@ -27,12 +27,6 @@ function List() {
         this._unshiftFunction(x);
     };
 
-    this.setGetEmptyCell = function (func) {
-        this._getEmptyCellFunction = func;
-    };
-    this.setDeleteItem = function (func) {
-        this._deleteItemFunction = func;
-    };
     this.setPush = function (func) {
         this._pushFunction = func;
     };
@@ -60,6 +54,13 @@ function ListBasedArray() {
     //Алгоритмы
     this._getEmptyCellFunction;
     this._deleteItemFunction;
+
+    this.setGetEmptyCell = function (func) {
+        this._getEmptyCellFunction = func;
+    };
+    this.setDeleteItem = function (func) {
+        this._deleteItemFunction = func;
+    };
 
     this._getEmptyCell = function () {
         return this._getEmptyCellFunction();
