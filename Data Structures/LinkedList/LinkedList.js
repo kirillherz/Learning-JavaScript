@@ -101,29 +101,3 @@ function ListBasedArray() {
         };
     };
 }
-
-function unshift(x) {
-    var index = this._getEmptyCell();
-    this._data[index] = x;
-    if (this._size === 0) {
-        this._head = index;
-        this._tail = index;
-        this._nextAdress[index] = null;
-    } else {
-        this._nextAdress[index] = this._head;
-        this._head = index;
-    }
-    this._size += 1;
-}
-
-function shift() {
-    var x = this._data[this._head];
-    var temp = this._head;
-    this._deleteItem(this._head);
-    this._head = this._nextAdress[temp];
-    if (this._head === null) {
-        this._tail = null;
-    }
-    this._size -= 1;
-    return x;
-}
