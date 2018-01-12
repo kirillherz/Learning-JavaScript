@@ -7,6 +7,7 @@ function List() {
     this._insertFunction;
     this._deleteItemFunction;
     this._unshiftFunction;
+    this._shiftFunction;
 
     this.getSize = function () {
         return this._size;
@@ -27,6 +28,10 @@ function List() {
         this._unshiftFunction(x);
     };
 
+    this.shift = function () {
+        this._shiftFunction();
+    };
+
     this.setPush = function (func) {
         this._pushFunction = func;
     };
@@ -41,6 +46,10 @@ function List() {
     };
     this.setUnshift = function (func) {
         this._deleteItemFunction = func;
+    };
+
+    this.setShiftFunction = function (func) {
+        this._shiftFunction(func);
     };
 }
 
