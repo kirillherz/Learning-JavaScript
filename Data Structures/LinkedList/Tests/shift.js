@@ -28,4 +28,17 @@ describe("shift", function () {
         assert.equal(list._head, null, "head не указывает на голову");
         assert.equal(list._tail, null, "tail не указывает на хвост");
     });
+    it("Считает размер списка", function () {
+        var list = {_data: [0, 1, 2, 3, 4],
+            _nextAdress: [1, 2, 3, 4, null],
+            _head: 0,
+            _tail: 4,
+            _size: 5,
+            _deleteItem: function () {
+            },
+            shift: shift};
+        list.shift();
+        list.shift();
+        assert.equal(list._size, 3, "Не правильно считает размер списка");
+    });
 });
