@@ -58,4 +58,9 @@ function ListBasedArrayBuilder() {
         this._list.setShiftFunction(shift);
         return this;
     };
+
+    this.buildUnshiftFunction = function () {
+        this._list.setUnshift(unshift);
+        return this;
+    };
 }
