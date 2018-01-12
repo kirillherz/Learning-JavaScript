@@ -22,7 +22,9 @@ function DirectorList() {
                 .buildGetEmptyCellFunction()
                 .buildDeleteItemFuinction()
                 .buildPushFunction()
-                .buildPopFunction();
+                .buildPopFunction()
+                .buildShiftFunction()
+                .buildUnshiftFunction();
         return this;
     };
 }
