@@ -53,5 +53,9 @@ function ListBasedArrayBuilder() {
     this.buildPopFunction = function () {
         this._list.setPop(pop);
         return this;
-    }
+    };
+    this.buildShiftFunction = function () {
+        this._list.setShiftFunction(shift);
+        return this;
+    };
 }
