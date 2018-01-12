@@ -23,6 +23,7 @@ function DirectorList() {
                 .buildDeleteItemFuinction()
                 .buildPushFunction()
                 .buildPopFunction();
+        return this;
     };
 }
 
