@@ -62,4 +62,18 @@ describe("delete", function () {
         assert.equal(list._head, 0, "head не указывает на голову");
         assert.equal(list._tail, 4, "tail не указывает на хвост");
     });
+    it("Считает размер списка", function () {
+        var list = {_data: [0, 1, 2, 3, 4],
+            _nextAdress: [1, 2, 3, 4, null],
+            _head: 0,
+            _tail: 4,
+            _size: 5,
+            pop: pop,
+            _deleteItem: function () {
+            },
+            delete: deleteItem};
+        list.delete(2);
+        list.delete(3);
+        assert.equal(list._size, 3, "Не правильно считает размер списка");
+    });
 });
