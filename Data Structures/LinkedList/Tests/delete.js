@@ -48,4 +48,18 @@ describe("delete", function () {
         assert.equal(list._tail, 3, "tail не указывает на хвост");
         assert.equal(list._nextAdress[list._tail], null, "Следующий адрес не равен ожидаемому");
     });
+    it("Удаляет элемент из середины", function () {
+        var list = {_data: [0, 1, 2, 3, 4],
+            _nextAdress: [1, 2, 3, 4, null],
+            _head: 0,
+            _tail: 4,
+            _size: 5,
+            _deleteItem: function () {
+            },
+            delete: deleteItem};
+        assert.equal(list.delete(2), 2, "Неверно  значение");
+        assert.equal(list._nextAdress[1], 3, "Неверно  связывает адреса");
+        assert.equal(list._head, 0, "head не указывает на голову");
+        assert.equal(list._tail, 4, "tail не указывает на хвост");
+    });
 });
