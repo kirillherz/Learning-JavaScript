@@ -18,4 +18,19 @@ describe("delete", function () {
         assert.equal(list._tail, 4, "tail не указывает на хвост");
         assert.equal(list._nextAdress[list._head], 2, "Следующий адрес не равен ожидаемому");
     });
+    it("Удаляет элемент из списка, если в списке 1 элемент", function () {
+        var list = {_data: [0],
+            _nextAdress: [null],
+            _head: 0,
+            _tail: 0,
+            _size: 1,
+            shift: shift,
+            _deleteItem: function () {
+            },
+            delete: deleteItem};
+
+        assert.equal(list.delete(0), 0, "Неверно добавляет значение");
+        assert.equal(list._head, null, "head не указывает на голову");
+        assert.equal(list._tail, null, "tail не указывает на хвост");
+    });
 });
