@@ -5,6 +5,8 @@ describe("insert", function () {
             _head: null,
             _tail: null,
             _size: 0,
+            unshift: unshift,
+            push: push,
             _getEmptyCell: function () {
                 this._data.push(null);
                 this._nextAdress.push(null);
@@ -23,6 +25,8 @@ describe("insert", function () {
             _head: 0,
             _tail: 0,
             _size: 1,
+            unshift: unshift,
+            push: push,
             _getEmptyCell: function () {
                 this._data.push(null);
                 this._nextAdress.push(null);
@@ -42,6 +46,8 @@ describe("insert", function () {
             _head: 0,
             _tail: 0,
             _size: 1,
+            unshift: unshift,
+            push: push,
             _getEmptyCell: function () {
                 this._data.push(null);
                 this._nextAdress.push(null);
@@ -61,6 +67,8 @@ describe("insert", function () {
             _head: 0,
             _tail: 0,
             _size: 1,
+            unshift: unshift,
+            push: push,
             _getEmptyCell: function () {
                 this._data.push(null);
                 this._nextAdress.push(null);
