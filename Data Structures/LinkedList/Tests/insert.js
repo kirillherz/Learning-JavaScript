@@ -11,7 +11,7 @@ describe("insert", function () {
                 return 0;
             },
             insert: insert};
-        list.insert(0);
+        list.insert(0,0);
         assert.equal(list._data[0], 0, "Неверно добавляет значение");
         assert.equal(list._head, 0, "head не указывает на голову");
         assert.equal(list._tail, 0, "tail не указывает на хвост");
