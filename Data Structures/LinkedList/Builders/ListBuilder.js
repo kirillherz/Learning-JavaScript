@@ -24,7 +24,8 @@ function DirectorList() {
                 .buildPushFunction()
                 .buildPopFunction()
                 .buildShiftFunction()
-                .buildUnshiftFunction();
+                .buildUnshiftFunction()
+                .buildInsertFunction();
         return this;
     };
 }
