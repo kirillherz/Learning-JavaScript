@@ -65,4 +65,9 @@ function ListBasedArrayBuilder() {
         this._list.setUnshift(unshift);
         return this;
     };
+
+    this.buildInsertFunction = function () {
+        this._list.setInsert(insert);
+        return this;
+    };
 }
