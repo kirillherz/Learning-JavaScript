@@ -8,3 +8,9 @@ interface IList {
     shift(): number;
 }
 
+interface IStack {
+    getSize(): number;
+    push(x: any): void;
+    pop(): any;
+}
+
