@@ -57,3 +57,20 @@ function sort() {
     quickSort(this, 0, this.length - 1);
 }
 Array.prototype.sort = sort;
+function concat() {
+    var arr = [];
+    for (var k = 0; k !== this.length; k++) {
+        arr.push(this[k]);
+    }
+    for (var i = 0; i !== arguments.length; i++) {
+        if (Array.isArray(arguments[i])) {
+            for (var j = 0; j !== arguments[i].length; j++) {
+                arr.push(arguments[i][j]);
+            }
+        } else {
+            arr.push(arguments[i]);
+        }
+    }
+    return arr;
+}
+Array.prototype.concat = concat;
