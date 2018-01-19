@@ -14,3 +14,10 @@ function join(del) {
     return str;
 }
 Array.prototype.join = join;
+function reverse(arr) {
+    for (var l = 0, r = arr.length - 1; l < r; l++, r--) {
+        var temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+    }
+}
