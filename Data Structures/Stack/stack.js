@@ -28,7 +28,7 @@ function Stack() {
             return null;
         }
     };
-    this.getSize = function(){
+    this.getSize = function () {
         return _size;
     };
 }
