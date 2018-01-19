@@ -21,3 +21,4 @@ function reverse(arr) {
         arr[r] = temp;
     }
 }
+Array.prototype.reverse = reverse;
