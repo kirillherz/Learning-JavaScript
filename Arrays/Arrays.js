@@ -74,3 +74,18 @@ function concat() {
     return arr;
 }
 Array.prototype.concat = concat;
+
+function slice(ar, l, r) {
+    if (l < 0) {
+        l = ar.length + l;
+    }
+    if (r < 0) {
+        r = ar.length + r;
+    }
+    var a = [];
+    for (; l !== r; l++) {
+        a.push(ar[l]);
+    }
+    return a;
+}
+Array.prototype.slice = slice;
