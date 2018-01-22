@@ -75,16 +75,16 @@ function concat() {
 }
 Array.prototype.concat = concat;
 
-function slice(ar, l, r) {
+function slice(l, r) {
     if (l < 0) {
-        l = ar.length + l;
+        l = this.length + l;
     }
     if (r < 0) {
-        r = ar.length + r;
+        r = this.length + r;
     }
     var a = [];
     for (; l !== r; l++) {
-        a.push(ar[l]);
+        a.push(this[l]);
     }
     return a;
 }
