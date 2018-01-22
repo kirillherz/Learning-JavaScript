@@ -95,3 +95,9 @@ function push(value) {
 }
 Array.prototype.push = push;
 
+function pop() {
+    var value = this[this.length - 1];
+    this.length = length - 1;
+    return value;
+}
+Array.prototype.pop = pop;
