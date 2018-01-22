@@ -89,3 +89,9 @@ function slice(l, r) {
     return a;
 }
 Array.prototype.slice = slice;
+
+function push(value) {
+    this[this.length] = value;
+}
+Array.prototype.push = push;
+
