@@ -168,3 +168,10 @@ function product() {
 }
 Array.prototype.product = product;
 
+function max() {
+    return this.reduce(function (x, y) {
+        return (x > y) ? x : y;
+    });
+}
+Array.prototype.max = max;
+
