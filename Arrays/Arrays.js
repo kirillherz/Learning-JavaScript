@@ -154,3 +154,10 @@ function isSparse2() {
 }
 Array.prototype.isSparse2 = isSparse2;
 
+function sum() {
+    return this.reduce(function (x, y) {
+        return x + y;
+    }, 0);
+}
+Array.prototype.sum = sum;
+
