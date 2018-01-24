@@ -83,8 +83,9 @@ function slice(l, r) {
         r = this.length + r;
     }
     var a = [];
-    for (; l !== r; l++) {
+    while (l !== r) {
         a.push(this[l]);
+        l++;
     }
     return a;
 }
