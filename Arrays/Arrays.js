@@ -120,3 +120,15 @@ function average() {
     });
     return sum / length;
 }
+
+function deleteEmptySlots() {
+    var isUndefined;
+    var isNull;
+    return this.filter(function (item) {
+        isUndefined = item === undefined;
+        isNull = item === null;
+        return (!(isUndefined || isNull));
+    });
+}
+Array.prototype.deleteEmptySlots = deleteEmptySlots;
+
