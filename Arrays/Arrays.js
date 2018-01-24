@@ -102,3 +102,12 @@ function pop() {
     return value;
 }
 Array.prototype.pop = pop;
+
+//Посчитать среднее арифметическое
+function average(items) {
+    var sum = 0;
+    items.forEach(function (item) {
+        sum += item;
+    });
+    return sum / items.length;
+}
