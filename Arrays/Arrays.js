@@ -175,3 +175,9 @@ function max() {
 }
 Array.prototype.max = max;
 
+function min() {
+    return this.reduce(function (x, y) {
+        return (x < y) ? x : y;
+    });
+}
+Array.prototype.min = min;
