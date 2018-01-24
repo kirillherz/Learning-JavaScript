@@ -132,3 +132,14 @@ function deleteEmptySlots() {
 }
 Array.prototype.deleteEmptySlots = deleteEmptySlots;
 
+function isSparse() {
+    var isUndefined;
+    var isNull;
+    return !this.every(function (item) {
+        isUndefined = item === undefined;
+        isNull = item === null;
+        return (!(isUndefined || isNull));
+    });
+}
+Array.prototype.isSparse = isSparse;
+
