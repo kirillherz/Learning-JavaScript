@@ -143,3 +143,14 @@ function isSparse() {
 }
 Array.prototype.isSparse = isSparse;
 
+function isSparse2() {
+    var isUndefined;
+    var isNull;
+    return this.some(function (item) {
+        isUndefined = item === undefined;
+        isNull = item === null;
+        return ((isUndefined || isNull));
+    });
+}
+Array.prototype.isSparse2 = isSparse2;
+
