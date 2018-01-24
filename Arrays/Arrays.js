@@ -104,10 +104,19 @@ function pop() {
 Array.prototype.pop = pop;
 
 //Посчитать среднее арифметическое
-function average(items) {
+function average() {
     var sum = 0;
-    items.forEach(function (item) {
-        sum += item;
+    var length = arguments.length;
+    Array.prototype.forEach.call(arguments, function (item) {
+        if (typeof (item) === "number") {
+            sum += item;
+        } else if (Array.isArray(item)) {
+            item.forEach(function (item) {
+                sum += item;
+            });
+        } else {
+            length -= 1;
+        }
     });
-    return sum / items.length;
+    return sum / length;
 }
