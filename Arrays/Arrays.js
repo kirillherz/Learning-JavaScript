@@ -161,3 +161,10 @@ function sum() {
 }
 Array.prototype.sum = sum;
 
+function product() {
+    return this.reduce(function (x, y) {
+        return x * y;
+    });
+}
+Array.prototype.product = product;
+
