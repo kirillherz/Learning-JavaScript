@@ -5,6 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
 
+            function Form(name) {
+                this._form = document.getElementsByName(name)[0];
+                for (var i = 0; i !== this._form.length; i++) {
+                    (function (j) {
+                        Object.defineProperty(this, this._form[j].name, {
+                            get: function () {
+                                return this._form[j].value;
+                            },
+                            set: function (value) {
+                                this._form[j].value = value;
+                            }
+                        });
+                    }).call(this, i);
+                }
+            }
         </script>
     </head>
     <body>
