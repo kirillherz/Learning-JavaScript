@@ -1,0 +1,4 @@
+function isStrict() {
+    return !this;
+}
+
