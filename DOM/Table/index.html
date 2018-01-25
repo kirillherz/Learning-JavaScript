@@ -20,6 +20,13 @@
                     }).call(this, i);
                 }
             }
+            function Column(text) {
+                this.tdElement = document.createElement("td");
+                this.tdElement.innerHTML = text;
+                this.setText = function (text) {
+                    tdElement.innerHTML = text;
+                };
+            }
         </script>
     </head>
     <body>
