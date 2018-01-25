@@ -27,3 +27,12 @@ Rabbit.prototype.run = function () {
     console.log("rabbit");
 };
 
+function showObjectProperty() {
+    for (var key in this) {
+        if (!this.hasOwnProperty(key)) {
+            continue;
+        } else {
+            console.log(key + ": '" + this[key] + "'");
+        }
+    }
+}
