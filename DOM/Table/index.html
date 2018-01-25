@@ -47,6 +47,17 @@
                     return this;
                 };
             }
+            function addTableRow() {
+                var name = document.getElementsByName("name")[0].value;
+                var family = document.getElementsByName("family")[0].value;
+                var age = document.getElementsByName("age")[0].value;
+                var row = new Row()
+                        .addCol(new Column(name))
+                        .addCol(new Column(family))
+                        .addCol(new Column(age));
+                t.addRow(row);
+            }
+
         </script>
     </head>
     <body>
