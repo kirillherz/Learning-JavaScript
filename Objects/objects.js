@@ -1,10 +1,24 @@
-function Animal() {
+function Animal(name) {
+    this._name = toFirstUpperCase(name);
+    ;
     console.log("Animal");
     this.runMsg = "run animal: ";
 }
+
 Animal.prototype.run = function () {
     console.log(this.runMsg);
 };
+Animal.prototype.toString = function () {
+    return this.name;
+};
+Object.defineProperty(Animal.prototype, "toString", {enumerable: false, configurable: false});
+Object.defineProperty(Animal.prototype, "name", {
+    get: function () {
+        return this._name;
+    },
+    set: function (value) {
+        this._name = toFirstUpperCase(value);
+    }});
 
 function Rabbit() {
     Animal.call(this);
