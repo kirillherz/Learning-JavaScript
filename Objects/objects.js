@@ -21,7 +21,7 @@ Object.defineProperty(Animal.prototype, "name", {
     }});
 
 function Rabbit() {
-    Animal.call(this);
+    Animal.apply(this, arguments);
     console.log("Rabbit");
     this.jumpMsg = "jump";
 }
@@ -31,7 +31,6 @@ function Rabbit() {
 //Rabbit.prototype = new Animal(); Не подходит т.к конструктор Animal может
 //иметь побочный эффект 
 Rabbit.prototype = Object.create(Animal.prototype);
-
 Rabbit.prototype.jump = function () {
     console.log(this.jumpMsg);
 };
@@ -49,4 +48,5 @@ function showObjectProperty() {
             console.log(key + ": '" + this[key] + "'");
         }
     }
-}
+}}
+
