@@ -38,6 +38,15 @@
             window.onload = function () {
                 t = new Table("table");
             };
+            function Table(id) {
+                var table = document.getElementById(id);
+                this.rowArray = [];
+                this.addRow = function (row) {
+                    table.appendChild(row.trElement);
+                    this.rowArray.push(row.trElement);
+                    return this;
+                };
+            }
         </script>
     </head>
     <body>
