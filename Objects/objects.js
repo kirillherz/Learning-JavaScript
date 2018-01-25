@@ -48,5 +48,9 @@ function showObjectProperty() {
             console.log(key + ": '" + this[key] + "'");
         }
     }
-}}
+}
 
+function toFirstUpperCase(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+String.prototype.toFirstUpperCase = toFirstUpperCase;
