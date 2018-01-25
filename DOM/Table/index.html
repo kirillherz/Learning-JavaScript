@@ -27,6 +27,13 @@
                     tdElement.innerHTML = text;
                 };
             }
+            function Row() {
+                this.trElement = document.createElement("tr");
+                this.addCol = function (column) {
+                    this.trElement.appendChild(column.tdElement);
+                    return this;
+                };
+            }
         </script>
     </head>
     <body>
