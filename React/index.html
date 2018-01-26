@@ -17,8 +17,33 @@
                     return React.DOM.h1(null, this.props.msg);
                 }
             });
+            var TextAreaCounter = React.createClass({
+                _textChange: function (ev) {
+                    this.setState({
+                        text: ev.target.value,
+                    });
+                },
+                propTypes: {
+                    text: React.PropTypes.string
+                },
+
+                getInitialState: function () {
+                    return {
+                        text: this.props.text,
+                    };
+                },
+                render: function () {
+                    return React.DOM.div(null,
+                            React.DOM.textarea({
+                                value: this.state.text,
+                                onChange: this._textChange,
+                            }),
+                            React.DOM.h3(null, this.state.text.length)
+                            );
+                }
+            });
             ReactDOM.render(
-                    React.createElement(hello, {msg: "Hello world"}),
+                    React.createElement(TextAreaCounter, {text: "world"}),
                     document.getElementById("root")
                     );
             ReactDOM.render(
