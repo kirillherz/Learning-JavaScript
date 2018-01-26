@@ -1,0 +1,14 @@
+input{
+    width: 100%;
+    border : none;
+}
+table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+tr{
+    border:1px solid;
+}
+td{
+    border: 1px solid;
+}
