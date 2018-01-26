@@ -83,4 +83,11 @@ function newObj(constructor) {
     constructor.apply(obj, args);
     return obj;
 }
+var b = 2;
+(function () {
+    var a = b = 5;
+})();
+console.log(b);
+//Что будет написано на консоли?
+//ответ 5
 
