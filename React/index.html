@@ -9,13 +9,22 @@
     </head>
     <body>
         <div id="root"></div>
+        <div id="forTable"></div>
         <script type="text/javascript">
 
             ReactDOM.render(
                     React.DOM.h1(null, "Hello World!"),
                     document.getElementById('root')
                     );
+            ReactDOM.render(
+                    React.DOM.table({id: "1"}, React.DOM.tr(null,
+                            React.DOM.td(null, "kirill"),
+                            React.DOM.td(null, "Chervotkin"),
+                            React.DOM.td({style: {border: "1"}}, "23"),
+                            )),
+                    document.getElementById('forTable')
+                    );
 
         </script>
-        </body>
-        </html>
+    </body>
+</html>
