@@ -20,3 +20,17 @@ function test() {
 test();
 //Какой результат?
 //undefined и 2
+
+(function () {
+    f();
+
+    f = function () {
+        console.log(1);
+    };
+})();
+function f() {
+    console.log(2);
+}
+f();
+//что напечатает?
+//2 и 1 т.к f = function... присваивает переменной f функцию в глобальной области.
