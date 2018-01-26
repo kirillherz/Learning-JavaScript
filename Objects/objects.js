@@ -54,3 +54,19 @@ function toFirstUpperCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 String.prototype.toFirstUpperCase = toFirstUpperCase;
+
+var fullname = 'John Doe';
+var obj = {
+    fullname: 'Colin Ihrig',
+    prop: {
+        fullname: 'Aurelio De Rosa',
+        getFullname: function () {
+            return this.fullname;
+        }
+    }
+};
+console.log(obj.prop.getFullname());
+var test = obj.prop.getFullname;
+console.log(test());
+//Напечатает 'Aurelio De Rosa' и "John Doe'
+//Исправьте предыдущий вопрос так, чтобы последний console.log ( ) стал Aurelio De Rosa.
