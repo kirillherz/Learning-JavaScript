@@ -100,3 +100,18 @@ String.prototype.repeatify = String.prototype.repeatify || function (times) {
     return str;
 };
 console.log('hello'.repeatify(3));
+
+var obj = {
+	a: 1
+};
+
+(function(obj) {
+	obj = {
+		a: 2
+	};
+
+})(obj);
+
+console.log(obj.a);
+//Что напечатает?
+//1
