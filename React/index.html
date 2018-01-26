@@ -12,9 +12,14 @@
         <div id="forTable"></div>
         <script type="text/javascript">
 
+            var hello = React.createClass({
+                render: function () {
+                    return React.DOM.h1(null, this.props.msg);
+                }
+            });
             ReactDOM.render(
-                    React.DOM.h1(null, "Hello World!"),
-                    document.getElementById('root')
+                    React.createElement(hello, {msg: "Hello world"}),
+                    document.getElementById("root")
                     );
             ReactDOM.render(
                     React.DOM.table({id: "1"}, React.DOM.tr(null,
