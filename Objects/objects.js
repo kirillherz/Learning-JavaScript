@@ -70,3 +70,8 @@ var test = obj.prop.getFullname;
 console.log(test());
 //Напечатает 'Aurelio De Rosa' и "John Doe'
 //Исправьте предыдущий вопрос так, чтобы последний console.log ( ) стал Aurelio De Rosa.
+function bind(func, context) {
+    return function () {
+        return func.apply(context, arguments);
+    };
+}
