@@ -7,3 +7,8 @@ class Animal {
     }
 }
 
+class Duck extends Animal {
+    quack() {
+        console.log("quack");s
+    }
+}
