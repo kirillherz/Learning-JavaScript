@@ -55,18 +55,17 @@ function XorList() {
         }
     };
     this.pop = function () {
+        var x;
         if (_size === 1) {
-            var x = _items[_tail][DATA];
             _stack.push(_tail);
         } else {
-            var x = _items[_tail][DATA];
             var prev = _items[_tail][ADRESS] ^ NULL;
             var prevPrev = _tail ^ _items[prev][ADRESS];
             _stack.push(_tail);
             _tail = prev;
             _items[_tail][ADRESS] = prevPrev ^ NULL;
-
         }
+        x = _items[_tail][DATA];
         _size -= 1;
         return x;
     };
