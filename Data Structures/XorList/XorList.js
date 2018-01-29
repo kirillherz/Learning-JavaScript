@@ -14,11 +14,12 @@ function XorList() {
     };
     var _getEmptyCell = function () {
         var index;
-        if (_stack.length === 0) {
+        if (_headStack === null) {
             _items.push([null, null]);
-            index = _items.length - 1;
+            return _items.length - 1;
         } else {
-            index = _stack.pop();
+            index = _headStack;
+            _headStack = _items[_headStack][ADRESS];
         }
         return index;
     };
