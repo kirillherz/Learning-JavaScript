@@ -100,14 +100,13 @@ function XorList() {
         }
     };
     this.shift = function () {
-        if (_size === 1) {
-            var x = _items[_head][DATA];
-            _deleteCell(_head);
-        } else {
-            var x = _items[_head][DATA];
-            var next = _items[_head][ADRESS] ^ NULL;
-            var nextNext = _head ^ _items[next][ADRESS];
-            _deleteCell(_head);
+        var x = _items[_head][DATA];
+        var next;
+        var nextNext;
+        _deleteCell(_head);
+        if (_size > 1) {
+            next = _items[_head][ADRESS] ^ NULL;
+            nextNext = _head ^ _items[next][ADRESS];
             _head = next;
             _items[_head][ADRESS] = nextNext ^ NULL;
         }
