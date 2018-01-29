@@ -120,7 +120,7 @@ function XorList() {
         var temp;
         var i = 0;
         return {
-            [Symbol.iterator] () {
+            [Symbol.iterator]() {
                 return this;
             },
             next: function () {
@@ -135,7 +135,7 @@ function XorList() {
                         value: x
                     };
                 } else {
-                    return{
+                    return {
                         done: true
                     };
                 }
@@ -160,7 +160,7 @@ function XorList() {
                         value: x
                     };
                 } else {
-                    return{
+                    return {
                         done: true
                     };
                 }
