@@ -63,11 +63,11 @@ function XorList() {
     this.pop = function () {
         var x;
         if (_size === 1) {
-            _stack.push(_tail);
+            _deleteCell(_tail);
         } else {
             var prev = _items[_tail][ADRESS] ^ NULL;
             var prevPrev = _tail ^ _items[prev][ADRESS];
-            _stack.push(_tail);
+            _deleteCell(_tail);
             _tail = prev;
             _items[_tail][ADRESS] = prevPrev ^ NULL;
         }
