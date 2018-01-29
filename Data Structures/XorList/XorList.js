@@ -6,7 +6,12 @@ function XorList() {
     var NULL = -1;
     var DATA = 0;
     var ADRESS = 1;
-    var _stack = [];
+    var _headStack = null;
+    var _deleteCell = function (index) {
+        var temp = _headStack;
+        _headStack = index;
+        _items[index][ADRESS] = temp;
+    };
     var _getEmptyCell = function () {
         var index;
         if (_stack.length === 0) {
