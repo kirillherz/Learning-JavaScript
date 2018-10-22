@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello World</title>
+</head>
+
+<body>
+
+    <template id="post">
+        <div>
+            <h1> {{title}} </h1>
+            <p> {{text}}</p>
+            <hr />
+        </div>
+    </template>
+
+    <div id="app">
+        <post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title" v-bind:text="post.text">
+        </post>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        Vue.component('post', {
+            props: ['title', 'text'],
+            template: "#post"
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                posts: []
+            },
+            created: function () {
+                this.posts = [
+                    {
+                        title: "news1",
+                        text: "text2",
+                    },
+                    {
+                        title: "news2",
+                        text: "text2"
+                    }
+                ]
+            }
+
+        })
+    </script>
+</body>
+
+</html>
