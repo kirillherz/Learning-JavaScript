@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="bear in bears" v-bind:class="{'strike': true}"> {{ bear }}</li>
+            <li v-for="bear in bears" v-bind:class="{'strike': bear.status}"> {{ bear.name }}</li>
         </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,9 +19,18 @@
             el: "#app",
             data: {
                 bears: [
-                    'Гризли',
-                    'Панда',
-                    'Губач'
+                    {
+                        name: "Панда",
+                        status: true
+                    },
+                    {
+                        name: "Гризли",
+                        status: false
+                    },
+                    {
+                        name: "Белый",
+                        status: false
+                    },
                 ]
             }
         })
