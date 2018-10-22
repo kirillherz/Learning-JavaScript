@@ -13,16 +13,14 @@
     </template>
 
     <template id="row">
-        <div>
-            <tr>
-                <column v-for="number in columns" v-bind:key="number" v-bind:number="number"></column>
-            </tr>
-        </div>
+        <tr>
+            <td is="column" v-for="number in columns" v-bind:number="number"></td>
+        </tr>
     </template>
 
     <div id="app">
-        <table>
-            <row v-for="columns in data" v-bind:columns="columns"> </row>
+        <table border="1">
+            <tr is="row" v-for="columns in data" v-bind:columns="columns"></tr>
         </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
