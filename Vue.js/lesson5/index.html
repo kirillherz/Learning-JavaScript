@@ -38,15 +38,31 @@
                     <input type="button" value="Возраст" v-on:click="sortByAge">
                 </th>
             </tr>
-            <tr v-for="person in persons">
+            <tr v-for="(person, key) in persons">
                 <td>
                     {{ person.name}}
                 </td>
                 <td>
                     {{ person.age}}
                 </td>
+                <td>
+                    <input type="button" value="удалить" v-on:click="del(key);" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" v-model="name" />
+                </td>
+                <td>
+                    <input type="text" v-model="age" />
+                </td>
+                <td>
+                    <input type="button" value="Добавить" v-on:click="add" />
+                </td>
             </tr>
         </table>
+        {{ age }}
+        {{ name }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -54,9 +70,23 @@
         const app = new Vue({
             el: '#app',
             data: {
-                persons: []
+                persons: [],
+                name: "",
+                age: "",
             },
             methods: {
+                del: function (position) {              
+                    this.persons.splice(position, 1);
+                },
+                add: function (event) {
+                    this.persons.push(
+                        {
+                            name: this.name,
+                            age: this.age
+                        })
+                    this.name = "";
+                    this.age = "";
+                },
                 getCompare: function (columnName) {
                     return function (a, b) {
                         if (a[columnName] > b[columnName]) {
