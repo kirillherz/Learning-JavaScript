@@ -32,10 +32,10 @@
         <table class="table">
             <tr>
                 <td>
-                    <input type="button" value="name" v-on:click="sortByName" style="width: 100%; height: 100%">
+                    <input type="button" value="Имя" v-on:click="sortByName" style="width: 100%; height: 100%">
                 </td>
                 <td>
-                    <input type="button" value="age" v-on:click="sortByAge">
+                    <input type="button" value="Возраст" v-on:click="sortByAge">
                 </td>
             </tr>
             <tr v-for="person in persons">
@@ -57,33 +57,26 @@
                 persons: []
             },
             methods: {
-                compareAge: function (a, b) {
-                    if (a["age"] > b["age"]) {
-                        return 1;
-                    }
-                    if (a["age"] < b["age"]) {
-                        return -1;
-                    }
-                    if (a["age"] == b["age"]) {
-                        return 0;
-                    }
-                },
-                compareName: function (a, b) {
-                    if (a["name"] > b["name"]) {
-                        return 1;
-                    }
-                    if (a["name"] < b["name"]) {
-                        return -1;
-                    }
-                    if (a["name"] == b["name"]) {
-                        return 0;
+                getCompare: function (columnName) {
+                    return function (a, b) {
+                        if (a[columnName] > b[columnName]) {
+                            return 1;
+                        }
+                        if (a[columnName] < b[columnName]) {
+                            return -1;
+                        }
+                        if (a[columnName] == b[columnName]) {
+                            return 0;
+                        }
                     }
                 },
                 sortByAge: function (event) {
-                    this.persons.sort(this.compareAge);
+                    var compare = this.getCompare("age");
+                    this.persons.sort(compare);
                 },
                 sortByName: function (event) {
-                    this.persons.sort(this.compareName);
+                    var compare = this.getCompare("name");
+                    this.persons.sort(compare);
                 }
             },
             created: function () {
