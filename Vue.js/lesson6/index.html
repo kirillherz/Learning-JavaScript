@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello World</title>
+    <style type="text/css">
+        *{ padding: 0; margin: 0; }
+        .table tr:nth-child(2n+1)>td>input {
+            background-color: #E0FFFF;
+            height: 100%;
+            width: 100%;
+            border: 0px solid #ccc;
+            padding: 0px 0px 0px 0px;
+            margin: 0px;
+
+        }
+
+        .table tr:nth-child(2n)>td>input {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            border: 0px solid #ccc;
+            padding: 0px 0px 0px 0px;
+            margin: 0px;
+        }
+
+        .table {
+            border-collapse: collapse;
+            padding: 0px 0px 0px 0px;
+            margin: 0px;
+        }
+
+        .table td,
+        th, tr {
+            border: 1px solid black;
+            padding: 0px 0px 0px 0px;
+            margin: 0;
+            /* Параметры рамки */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table class="table">
+            <tr>
+                <td>
+                    <input type="button" value="Имя" v-on:click="sortByName">
+                </td>
+                <td>
+                    <input type="button" value="Возраст" v-on:click="sortByAge">
+                </td>
+            </tr>
+            <tr v-for="(person, key) in persons">
+                <td>
+                    <input type="text" v-model="person.name" />
+                </td>
+                <td>
+                    <input type="text" v-model="person.age" />
+                </td>
+                <td>
+                    <input type="button" value="удалить" v-on:click="del(key);" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" v-model="name" />
+                </td>
+                <td>
+                    <input type="text" v-model="age" />
+                </td>
+                <td>
+                    <input type="button" value="Добавить" v-on:click="add" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                persons: [],
+                name: "",
+                age: "",
+            },
+            methods: {
+                del: function (position) {
+                    this.persons.splice(position, 1);
+                },
+                add: function (event) {
+                    this.persons.push(
+                        {
+                            name: this.name,
+                            age: this.age
+                        })
+                    this.name = "";
+                    this.age = "";
+                },
+                getCompare: function (columnName) {
+                    return function (a, b) {
+                        if (a[columnName] > b[columnName]) {
+                            return 1;
+                        }
+                        if (a[columnName] < b[columnName]) {
+                            return -1;
+                        }
+                        if (a[columnName] == b[columnName]) {
+                            return 0;
+                        }
+                    }
+                },
+                sortByAge: function (event) {
+                    var compare = this.getCompare("age");
+                    this.persons.sort(compare);
+                },
+                sortByName: function (event) {
+                    var compare = this.getCompare("name");
+                    this.persons.sort(compare);
+                }
+            },
+            created: function () {
+                this.persons = [
+                    {
+                        name: "airillsdfgsdfgsdfg",
+                        age: 24
+                    },
+                    {
+                        name: "bena",
+                        age: 17
+                    },
+                    {
+                        name: "cirill",
+                        age: 8
+                    },
+                    {
+                        name: "dena",
+                        age: 10
+                    },
+                ]
+            }
+
+        })
+    </script>
+</body>
+
+</html>
