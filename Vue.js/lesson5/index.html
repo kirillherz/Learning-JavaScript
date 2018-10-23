@@ -61,8 +61,6 @@
                 </td>
             </tr>
         </table>
-        {{ age }}
-        {{ name }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -75,7 +73,7 @@
                 age: "",
             },
             methods: {
-                del: function (position) {              
+                del: function (position) {
                     this.persons.splice(position, 1);
                 },
                 add: function (event) {
