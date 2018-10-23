@@ -11,10 +11,10 @@
         <table border="1">
             <tr>
                 <td>
-                    <input type="button" value="name" style="width: 100%; height: 100%">
+                    <input type="button" value="name" v-on:click="sortByName" style="width: 100%; height: 100%">
                 </td>
                 <td>
-                    <input type="button" value="age" style="width: 100%; height: 100%">
+                    <input type="button" value="age" v-on:click="sortByAge" style="width: 100%; height: 100%">
                 </td>
             </tr>
             <tr v-for="person in persons">
@@ -35,22 +35,52 @@
             data: {
                 persons: []
             },
+            methods: {
+                compareAge: function (a, b) {
+                    if (a["age"] > b["age"]) {
+                        return 1;
+                    }
+                    if (a["age"] < b["age"]) {
+                        return -1;
+                    }
+                    if (a["age"] == b["age"]) {
+                        return 0;
+                    }
+                },
+                compareName: function (a, b) {
+                    if (a["name"] > b["name"]) {
+                        return 1;
+                    }
+                    if (a["name"] < b["name"]) {
+                        return -1;
+                    }
+                    if (a["name"] == b["name"]) {
+                        return 0;
+                    }
+                },
+                sortByAge: function (event) {
+                    this.persons.sort(this.compareAge);
+                },
+                sortByName: function (event) {
+                    this.persons.sort(this.compareName);
+                }
+            },
             created: function () {
                 this.persons = [
                     {
-                        name: "kirillsdfgsdfgsdfg",
+                        name: "airillsdfgsdfgsdfg",
                         age: 24
                     },
                     {
-                        name: "lena",
+                        name: "bena",
                         age: 17
                     },
                     {
-                        name: "kirill",
+                        name: "cirill",
                         age: 8
                     },
                     {
-                        name: "lena",
+                        name: "dena",
                         age: 10
                     },
                 ]
